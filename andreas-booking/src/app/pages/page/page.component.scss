@@ -1,0 +1,136 @@
+@import "includes";
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rem;
+  padding: 2rem 5rem;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    h1 {
+      @include heading;
+    }
+  }
+
+  .input-search {
+    border-color: $primary-200;
+    display: flex;
+
+    .input-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+    }
+
+    .input {
+      width: 14rem;
+      box-sizing: border-box;
+      padding: 1.2rem 1.2rem 1.6rem 2rem;
+
+      background: white;
+      border: 0.1rem solid blue;
+      border-radius: 0.3rem;
+    }
+
+    .input2 {
+      width: 14rem;
+      box-sizing: border-box;
+      padding: 1.2rem 1.2rem 1.6rem 2rem;
+
+      background: white;
+      border: 0.1rem solid blue;
+      border-radius: 0.3rem;
+      margin-left: 1rem;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.4rem;
+    }
+
+    .button {
+      background-color: white;
+      height: 43px;
+      width: 43px;
+      border-radius: 50%;
+      border: 1px solid #8ab4f8;
+      color: #8ab4f8;
+      text-align: center;
+      font-size: 26px;
+      transition: all 0.5s ease;
+      z-index: 1;
+      position: absolute;
+      transform: translate(-40%, 65%);
+    }
+
+    .input-picker {
+      display: flex;
+      margin-left: 6rem;
+    }
+  }
+
+  .explorar {
+    background-color: $primary-200;
+    border: 1px solid transparent;
+    border-radius: 24px;
+    display: flex;
+    align-content: center;
+    margin-top: -7px;
+    z-index: 5;
+    @include small($color: $color-background-warning);
+    span {
+      @include small($color: $color-background-warning);
+    }
+  }
+
+  .tab {
+    display: flex;
+
+    .select-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .select-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .select {
+      width: 14rem;
+      padding-left: 1.2rem;
+    }
+  }
+}
+
+.card {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+.img-body {
+  background-image: url("https://www.gstatic.com/travel-frontend/animation/hero/flights_nc_4.svg");
+  height: 300px;
+  width: 100%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr;
+
+  .info-card {
+    width: 30rem;
+  }
+
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="content-item" *ngFor="let item of item">
+  <p class="label" *ngIf="item?.label">
+    {{ item?.label }}
+  </p>
+  <div class="value-container">
+    <ng-container *ngIf="item?.iconContent">
+      <amr-svg-new
+        [svg]="item?.iconContent?.icon"
+        [color]="item?.iconContent?.color"
+        width="1.29rem"
+        height="1.29rem"
+      ></amr-svg-new>
+    </ng-container>
+    <p class="value">{{ item?.value }}</p>
+  </div>
+</div>

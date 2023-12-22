@@ -1,0 +1,64 @@
+/* Screen dimensions */
+@mixin smartphone {
+  @media only screen and (max-width: $bp-desktop-min - 1) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $bp-desktop-min) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media only screen and (max-width: $bp-sm - 1) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media only screen and (min-width: $bp-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media only screen and (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media only screen and (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media only screen and (min-width: $bp-xl) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media only screen and (min-width: $bp-xxl) {
+    @content;
+  }
+}
+
+@mixin small($font-weight: $font-medium, $color: $primary) {
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: 0.8rem;
+  color: $color;
+}
+
+@mixin heading($font-weight: $font-medium, $color: $secondary) {
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: 5.6rem;
+  color: $color;
+}

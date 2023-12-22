@@ -1,0 +1,33 @@
+<section class="material-new-date-field" [ngClass]="{ 'data-form': dataForm }">
+  <!-- <div *ngIf="!dataForm" class="label-container">
+    <label class="label">{{ label }}</label>
+  </div> -->
+ <mat-form-field appearance="fill" class="picker">
+    <div *ngIf="dataForm" class="label-container">
+   <!--    <label class="label">{{ label }}</label> -->
+    </div>
+    <div class="input">
+      <input
+        #fromInput
+        matInput
+        [placeholder]="placeholder"
+        [min]="minDate"
+        [max]="maxDate"
+        [matDatepicker]="picker"
+        [maxlength]="maxlength"
+        (dateInput)="valueChanged($event.value)"
+        (dateChange)="valueChanged($event.value)"
+        [formControl]="control"
+        required
+      />
+     
+    </div>
+
+    <mat-datepicker-toggle matSuffix [for]="picker" (click)="toggleIcon(fromInput)">
+      
+    </mat-datepicker-toggle>
+    <mat-datepicker (selectedChanged)="fromPicker($event)" #picker> </mat-datepicker>
+  </mat-form-field> 
+  <div class="feedback-container" *ngIf="control?.invalid && (control?.dirty || control?.touched)">
+  </div>
+</section>

@@ -1,0 +1,11 @@
+@import "includes";
+
+.content-item {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+
+  .label {
+    align-items: center;
+  }
+}

@@ -1,0 +1,20 @@
+<button
+  (click)="emitClick()"
+  [type]="type"
+  [ngClass]="getCustomClass()"
+  [ngStyle]="getCustomStyles()"
+  [attr.aria-label]="ariaLabel"
+>
+  <ng-container *ngIf="!showSvgIcon">
+    <span>{{ label }}</span>
+  </ng-container>
+  <ng-container *ngIf="showSvgIcon">
+    <amr-svg
+      [svg]="buttonSvgIcon"
+      [width]="buttonSvgIconWidthSize"
+      [height]="buttonSvgIconHeightSize"
+      [color]="buttonSvgIconTheme"
+    ></amr-svg>
+     <span>{{ label }}</span>
+  </ng-container>
+</button>

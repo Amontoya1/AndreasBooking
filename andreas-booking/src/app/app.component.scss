@@ -1,0 +1,10 @@
+@import "includes";
+.header {
+  border-bottom: solid 6px $color-running-text;
+  background-color: #ffff;
+  box-shadow: 0 -0.8rem 0.5rem 1rem rgb(0 0 0 / 7%);
+}
+
+.footer {
+  border-top: solid 6px $color-running-text;
+}

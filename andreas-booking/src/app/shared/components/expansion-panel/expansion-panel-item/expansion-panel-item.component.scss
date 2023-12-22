@@ -1,0 +1,13 @@
+@import "includes";
+
+.item-expansion {
+  display: flex;
+
+  gap: 3rem;
+  align-content: space-around;
+}
+
+img {
+  width: 2rem;
+  height: 2rem;
+}

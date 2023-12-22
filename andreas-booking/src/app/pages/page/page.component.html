@@ -1,0 +1,141 @@
+<div class="img-body"></div>
+<h1 class="title">Vuelos</h1>
+<section class="main-section">
+  <mat-card>
+    <mat-card-content>
+      <div class="tab">
+        <div class="select-container">
+          <div class="select-content">
+            <mat-form-field appearance="fill" class="select">
+              <!--  <amr-svg svg="attention" color="grey-dart"></amr-svg> -->
+              <mat-select panelClass="select-new" [(value)]="selectedOption">
+                <mat-option value="Ida y Vuelta">Ida y Vuelta</mat-option>
+                <mat-option *ngFor="let item of items" [value]="item">{{
+                  item
+                }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="select-content">
+          <mat-form-field appearance="fill" class="select">
+            <!--    <amr-svg svg="people" color="grey-dart"></amr-svg> -->
+            <mat-select panelClass="select-new" [(value)]="selectedPeople">
+              <ng-container *ngFor="let item of list; let index = index">
+                <mat-option value="1">
+                  <div class="item-button">
+                    <span>{{ item }}</span>
+                    <button (click)="decrementQuantity($event, index)">
+                      -
+                    </button>
+                    <input
+                      type="text"
+                      [value]="selectedQuantities[index]"
+                      readonly
+                    />
+                    <button (click)="incrementQuantity($event, index)">
+                      +
+                    </button>
+                  </div>
+                </mat-option>
+              </ng-container>
+
+              <div class="item-button">
+                <button>
+                  <span>Cancelar</span>
+                </button>
+                <button (click)="onClick()">
+                  <span>Hecho</span>
+                </button>
+              </div>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="select-content">
+          <mat-form-field appearance="fill" class="select">
+            <!-- <label class="label">{{ selectedTurista }}</label> -->
+            <mat-select panelClass="select-new" [(value)]="selectedTurista">
+              <mat-option value="Turista">Turista</mat-option>
+              <mat-option *ngFor="let item of items" [value]="item">{{
+                item
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="input-search">
+        <div class="input-wrapper">
+          <span class="search-icon">
+            <amr-svg svg="search-people" color="grey-dart"></amr-svg>
+          </span>
+          <input class="input" type="text" placeholder="Zaragoza" />
+        </div>
+        <div class="teste">
+          <button class="button">
+            <amr-svg svg="attention" color="grey-dart"></amr-svg>
+          </button>
+        </div>
+        <div class="input-wrapper">
+          <span class="search-icon">
+            <amr-svg svg="browse-arrow" color="grey"></amr-svg>
+          </span>
+          <input
+            class="input2"
+            type="text"
+            placeholder="¿A donde quieres ir?"
+          />
+        </div>
+        <div class="input-picker">
+          <amr-picker
+            placeholder="Salida"
+            [dataForm]="true"
+            [maxlength]="10"
+            [formControlName]="dataInicial"
+          ></amr-picker>
+          <amr-picker
+            placeholder="Vuelta"
+            [dataForm]="true"
+            [maxlength]="10"
+            [formControlName]="dataFinal"
+          ></amr-picker>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div class="explorar">
+    <amr-button
+      ariaLabel="Search"
+      label="Explorar"
+      buttonSvgIcon="browse"
+      iconTheme="white"
+      svgIconWidthSize="1.167rem"
+      svgIconHeightSize="1.167rem"
+      [showSvgIcon]="true"
+    ></amr-button>
+  </div>
+  <ng-container>
+    <div class="card" *ngFor="let item of informationFligth">
+      <amr-expansion-panel-container>
+        <amr-expansion-panel-item
+          [title]="item"
+          expanded="true"
+          (opened)="(true)"
+          [item]="item"
+        >
+          <section class="info">
+            <img
+              src="https://www.gstatic.com/flights/airline_logos/70px/multi.png"
+              alt="Logo de la aerolínea"
+            />
+            <div class="info-card" *ngFor="let item of informationFligthCard">
+              <amr-item class="item-expansion" [item]="item"></amr-item>
+            </div>
+          </section>
+        </amr-expansion-panel-item>
+      </amr-expansion-panel-container>
+    </div>
+  </ng-container>
+</section>

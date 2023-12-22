@@ -1,0 +1,48 @@
+/* @import "includes";
+.material-new-date-field {
+  width: 100%;
+  .label-container {
+    @include start;
+    gap: 0.4rem;
+
+    .label {
+      @include paragraph-small-2x($color: $color-neutral-200);
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  .picker {
+    cursor: pointer;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    margin-left: 0.5rem;
+    top: -2.4px;
+    align-items: flex-start;
+  }
+
+  .feedback-container {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0 0;
+
+    .feedback {
+      @include paragraph-small-2x;
+      color: $color-support-300;
+      margin: 0;
+      padding: 0 0 0 0.2rem;
+    }
+  }
+}
+
+.input {
+  display: flex;
+
+  .button-remove-icon {
+    cursor: pointer;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: stretch;
+  }
+} */
