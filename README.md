@@ -10,6 +10,8 @@ Asegúrate de tener Node.js y npm instalados en tu sistema antes de comenzar.
  "express": "^4.18.2",
   "puppeteer": "^21.6.1",
   "typescript": "^5.3.3"
+   Angular "^15.2.9"
+   "@angular-devkit/build-angular": "15.2.9",
 
 ## Instalación
 
