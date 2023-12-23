@@ -17,63 +17,9 @@ import {
 } from 'rxjs';
 import { DataService } from 'src/app/core/service/data.service';
 import { WeatherService } from 'src/app/core/service/weather.service';
+import { Flight } from 'src/app/shared/interfaces/fligth';
+import { WeatherData } from 'src/app/shared/interfaces/weather';
 
-interface Flight {
-  schedule: string;
-  airline: string;
-  duration: string;
-  transfer: string;
-  price: string;
-  svg?: string;
-  ariaLabel: string;
-  emissions: string;
-  availableTransport: string;
-  contingencies: string;
-  travelModes: string;
-}
-
-interface Weather {
-  id: number;
-  main: string;
-  description: string;
-  icon: string;
-}
-
-interface Main {
-  temp: number;
-  feels_like: number;
-  temp_min: number;
-  temp_max: number;
-  pressure: number;
-  humidity: number;
-}
-
-interface Wind {
-  speed: number;
-  deg: number;
-}
-
-interface Sys {
-  type: number;
-  id: number;
-  message: number;
-  country: string;
-  sunrise: number;
-  sunset: number;
-}
-
-export interface WeatherData {
-  weather: Weather[];
-  main: Main;
-  wind: Wind;
-  sys: Sys;
-  name: string;
-}
-
-export interface Coord {
-  latitude: string;
-  longitude: string;
-}
 @Component({
   selector: 'amr-page',
   templateUrl: './page.component.html',
@@ -81,7 +27,7 @@ export interface Coord {
 })
 export class PageComponent implements OnInit, OnDestroy {
   @Input() formGroup!: FormGroup;
-  @Input() public weather!: any;
+  @Input() public weather!: WeatherData;
   public minDateInicial = new Date();
   public maxDateInicial = new Date();
   public isLoading = false;
@@ -96,13 +42,11 @@ export class PageComponent implements OnInit, OnDestroy {
   public selectedPeople: string = '1';
   public dataInicial: string = 'Data Inicial';
   public dataFinal: string = 'Data Final';
-
   public flights: Flight[] = [];
-  public informationFligth: any[] = [];
-
-  private subscriptions = new Subscription();
-
   public informationFligthCard!: { label: string; value: string }[][];
+  public city: string = 'Portugal';
+  public informationFligth: any[] = [];
+  private subscriptions = new Subscription();
 
   constructor(
     private flightService: DataService,
@@ -194,11 +138,11 @@ export class PageComponent implements OnInit, OnDestroy {
     ]);
   }
 
-  getWeather(): void {
+  getWeather(city: string): void {
     this.isLoading = true;
     this.subscriptions.add(
       this.weatherService
-        .getWeatherData('Portugal')
+        .getWeatherData(city)
         .pipe(
           catchError((error) => {
             throw error;
@@ -212,9 +156,14 @@ export class PageComponent implements OnInit, OnDestroy {
     );
   }
 
+  public onSubmit() {
+    this.getWeather(this.city);
+    this.city = '';
+  }
+
   ngOnInit(): void {
     this.getFlights();
-    this.getWeather();
+    this.getWeather(this.city);
   }
 
   ngOnDestroy(): void {

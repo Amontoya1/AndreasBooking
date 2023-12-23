@@ -66,43 +66,30 @@
         </div>
       </div>
 
-      <div class="input-search">
+<div class="input-search">
         <div class="input-wrapper">
-          <span class="search-icon">
-            <amr-svg svg="search-people" color="grey-dart"></amr-svg>
-          </span>
-          <input class="input" type="text" placeholder="Zaragoza" />
+            <div class="input-container">
+                <amr-svg svg="search-people" color="grey-dart"></amr-svg>
+                <input type="text" placeholder="Zaragoza" />
+            </div>
+
+            <div class="button-container">
+                <button class="button">
+                    <amr-svg svg="attention" color="grey-dart"></amr-svg>
+                </button>
+            </div>
+
+            <div class="input-container">
+                <amr-svg svg="browse-arrow" color="grey"></amr-svg>
+                <input class="input" type="text" placeholder="¿A donde quieres ir?" />
+            </div>
         </div>
-        <div class="teste">
-          <button class="button">
-            <amr-svg svg="attention" color="grey-dart"></amr-svg>
-          </button>
-        </div>
-        <div class="input-wrapper">
-          <span class="search-icon">
-            <amr-svg svg="browse-arrow" color="grey"></amr-svg>
-          </span>
-          <input
-            class="input2"
-            type="text"
-            placeholder="¿A donde quieres ir?"
-          />
-        </div>
+        
         <div class="input-picker">
-          <amr-picker
-            placeholder="Salida"
-            [dataForm]="true"
-            [maxlength]="10"
-            [formControlName]="dataInicial"
-          ></amr-picker>
-          <amr-picker
-            placeholder="Vuelta"
-            [dataForm]="true"
-            [maxlength]="10"
-            [formControlName]="dataFinal"
-          ></amr-picker>
+            <amr-picker placeholder="Salida"  [maxlength]="10" [formControlName]="dataInicial"></amr-picker>
+            <amr-picker placeholder="Vuelta" [maxlength]="10" [formControlName]="dataFinal"></amr-picker>
         </div>
-      </div>
+    </div>
     </mat-card-content>
   </mat-card>
   <div class="explorar">

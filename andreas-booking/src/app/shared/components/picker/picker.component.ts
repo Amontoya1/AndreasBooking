@@ -30,19 +30,15 @@ export class PickerComponent implements ControlValueAccessor, OnInit, OnDestroy 
   @Input() placeholder!: string;
   @Input() startView = 'month';
   @Input() label!: string;
-  @Input() mensagemPadronizado!: string;
   @Input() customErrorMessages: string[] = [];
   @Input() dataMinimaMensagem = '';
   @Input() dataMaximaMensagem!: string;
   @Input() minDate!: Date | string;
   @Input() maxDate!: Date | string;
   @Input() maxlength!: number;
-  @Input() dataForm = false;
   @Output() formChange = new EventEmitter();
   @Output() toggleIconEvent = new EventEmitter();
 
-  /*  @Output()
-   dateChange: EventEmitter<MatDatepickerInputEvent<any>>; */
 
   @Output()
   selectedChanged: EventEmitter<number> = new EventEmitter<number>();
@@ -134,27 +130,11 @@ export class PickerComponent implements ControlValueAccessor, OnInit, OnDestroy 
     this.control?.reset();
   }
 
-  private setInputDatesMessages(): void {
-    const dataMaximaControl = this.control?.errors?.matDatepickerMax?.max;
-    const dataMinimaControl = this.control?.errors?.matDatepickerMin?.min;
-
-    if (this.control?.errors?.matDatepickerMax) {
-      this.dataErrorMessages = this.dataMaximaMensagem
-        ? this.dataMaximaMensagem
-        : `A data máxima é ${dataMaximaControl?.format('DD/MM/YYYY')}`;
-    }
-    if (this.control?.errors?.matDatepickerMin) {
-      this.dataErrorMessages = this.dataMinimaMensagem
-        ? this.dataMinimaMensagem
-        : `A data mínima é ${dataMinimaControl?.format('DD/MM/YYYY')}`;
-    }
-  }
 
   ngOnInit(): void {
     this.subscriptions.add(
       this.control?.valueChanges.subscribe(value => {
         this.value = value;
-        this.setInputDatesMessages();
       })
     );
   }
