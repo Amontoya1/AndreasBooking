@@ -1,4 +1,4 @@
-<div class="content-item" *ngFor="let item of item">
+<div class="content" *ngFor="let item of item"  [ngClass]="applyClasses(item)">
   <p class="label" *ngIf="item?.label">
     {{ item?.label }}
   </p>

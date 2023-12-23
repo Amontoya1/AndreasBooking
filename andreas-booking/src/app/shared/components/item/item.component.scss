@@ -1,9 +1,15 @@
 @import "includes";
 
-.content-item {
+.content {
   display: flex;
-  flex-direction: column;
   align-content: space-around;
+
+  &.full {
+    /*     flex-basis: 100%; */
+  }
+  &.equally {
+    flex-basis: calc(50% - 1.6rem);
+  }
 
   .label {
     align-items: center;

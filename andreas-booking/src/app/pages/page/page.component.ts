@@ -92,7 +92,6 @@ export class PageComponent implements OnInit, OnDestroy {
           tap((data) => {
             this.flights = data.slice(0, 5);
             this.getDataFligth();
-            this.getFligthCard();
           }),
           finalize(() => (this.isLoading = false))
         )
@@ -103,37 +102,57 @@ export class PageComponent implements OnInit, OnDestroy {
   public getDataFligth(): void {
     this.informationFligth = this.flights.map((flight) => [
       {
-        label: flight.schedule,
-        value: flight.airline,
-      },
-      {
-        label: flight.duration,
-        value: flight.airline,
-      },
-      {
-        label: flight.transfer,
-        value: flight.contingencies,
-      },
-      {
-        label: flight.travelModes,
-        value: flight.availableTransport,
-      },
-      {
-        label: flight.price,
-        value: flight.transfer,
-      },
-    ]);
-  }
-
-  public getFligthCard(): void {
-    this.informationFligthCard = this.flights.map((flight) => [
-      {
-        label: flight.schedule,
-        value: flight.airline,
-      },
-      {
-        label: 'Emisiones de carbono estimadas',
-        value: flight.travelModes,
+        header: [
+          {
+            label: flight.schedule,
+            value: flight.airline,
+            itemCss: 'full',
+          },
+          {
+            label: flight.duration,
+            value: flight.airline,
+            itemCss: 'full',
+          },
+          {
+            label: flight.transfer,
+            value: flight.contingencies,
+            itemCss: 'full',
+          },
+          {
+            label: flight.travelModes,
+            value: flight.availableTransport,
+            itemCss: 'full',
+          },
+          {
+            label: flight.price,
+            value: flight.transfer,
+            itemCss: 'full',
+          },
+        ],
+        body: [
+          {
+            label: flight.schedule,
+            value: flight.airline,
+            itemCss: 'equally',
+          },
+          {
+            label: 'Emisiones de carbono estimadas',
+            value: flight.travelModes,
+            itemCss: 'equally',
+          },
+        ],
+        bodyTest: [
+          {
+            label: flight.schedule,
+            value: flight.airline,
+            itemCss: 'equally',
+          },
+          {
+            label: 'Emisiones de carbono estimadas',
+            value: flight.travelModes,
+            itemCss: 'equally',
+          },
+        ],
       },
     ]);
   }

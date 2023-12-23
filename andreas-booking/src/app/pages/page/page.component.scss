@@ -115,6 +115,7 @@
   margin-right: 2rem;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .img-body {
@@ -124,17 +125,21 @@
   background-repeat: no-repeat, no-repeat;
 }
 
-.info {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: 1fr 1fr;
-
-  .info-card {
-    width: 30rem;
-  }
+.info-card {
+  display: flex;
+  width: 40rem;
 
   img {
     width: 2rem;
     height: 2rem;
   }
+}
+
+.buffer {
+  position: absolute;
+  height: 3.4rem;
+  width: 0.4rem;
+  border-radius: 1.6rem;
+  vertical-align: middle;
+  border-right: 4px dotted $primary-200;
 }

@@ -66,30 +66,42 @@
         </div>
       </div>
 
-<div class="input-search">
+      <div class="input-search">
         <div class="input-wrapper">
-            <div class="input-container">
-                <amr-svg svg="search-people" color="grey-dart"></amr-svg>
-                <input type="text" placeholder="Zaragoza" />
-            </div>
+          <div class="input-container">
+            <amr-svg svg="search-people" color="grey-dart"></amr-svg>
+            <input type="text" placeholder="Zaragoza" />
+          </div>
 
-            <div class="button-container">
-                <button class="button">
-                    <amr-svg svg="attention" color="grey-dart"></amr-svg>
-                </button>
-            </div>
+          <div class="button-container">
+            <button class="button">
+              <amr-svg svg="attention" color="grey-dart"></amr-svg>
+            </button>
+          </div>
 
-            <div class="input-container">
-                <amr-svg svg="browse-arrow" color="grey"></amr-svg>
-                <input class="input" type="text" placeholder="¿A donde quieres ir?" />
-            </div>
+          <div class="input-container">
+            <amr-svg svg="browse-arrow" color="grey"></amr-svg>
+            <input
+              class="input"
+              type="text"
+              placeholder="¿A donde quieres ir?"
+            />
+          </div>
         </div>
-        
+
         <div class="input-picker">
-            <amr-picker placeholder="Salida"  [maxlength]="10" [formControlName]="dataInicial"></amr-picker>
-            <amr-picker placeholder="Vuelta" [maxlength]="10" [formControlName]="dataFinal"></amr-picker>
+          <amr-picker
+            placeholder="Salida"
+            [maxlength]="10"
+            [formControlName]="dataInicial"
+          ></amr-picker>
+          <amr-picker
+            placeholder="Vuelta"
+            [maxlength]="10"
+            [formControlName]="dataFinal"
+          ></amr-picker>
         </div>
-    </div>
+      </div>
     </mat-card-content>
   </mat-card>
   <div class="explorar">
@@ -103,22 +115,28 @@
       [showSvgIcon]="true"
     ></amr-button>
   </div>
-  <ng-container>
-    <div class="card" *ngFor="let item of informationFligth">
+  <ng-container *ngFor="let item of informationFligth">
+    <div class="card">
       <amr-expansion-panel-container>
         <amr-expansion-panel-item
-          [title]="item"
+          [title]="item[0]?.header"
           expanded="true"
           (opened)="(true)"
-          [item]="item"
+          [item]="item[0]?.header"
         >
-          <section class="info">
+          <section class="info-card">
             <img
               src="https://www.gstatic.com/flights/airline_logos/70px/multi.png"
               alt="Logo de la aerolínea"
-            />
-            <div class="info-card" *ngFor="let item of informationFligthCard">
-              <amr-item class="item-expansion" [item]="item"></amr-item>
+              />
+              <div>
+              <div class="buffer"></div>
+              <amr-item [item]="item[0]?.body"></amr-item>
+            </div>
+          </section>
+          <section class="info-card">
+            <div>
+              <amr-item [item]="item[0]?.bodyTest"></amr-item>
             </div>
           </section>
         </amr-expansion-panel-item>

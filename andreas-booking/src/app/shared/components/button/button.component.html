@@ -18,3 +18,107 @@
      <span>{{ label }}</span>
   </ng-container>
 </button>
+
+
+<!-- 
+
+<div class="card highlight-card card-small bg-primary">
+  <p class="h1 text-white text-center">Status Checker</p>
+</div>
+
+<div
+  class="card highlight mx-auto d-flex float-center text-center my-4 px-5 border border-white"
+>
+  <form class="border border-white" #form="ngForm" (submit)="onSubmit()">
+    <input
+      class="px-3"
+      type="text"
+      placeholder="Search city weather ,here"
+      name="city"
+      [(ngModel)]="city"
+    />
+  </form>
+</div>
+
+<div class="container" *ngIf="weather">
+  <div class="row">
+    <div class="col-md-2 mx-auto">
+      <p>
+        <i class="bi bi-thermometer-high px-2 text-danger"></i
+        ><span class="text-muted">Max Tempareture:</span>
+        <span class="px-3 bg-light"
+          ><br />
+          {{ weather.main.temp_max | number : "1.0-0" }}°c
+        </span>
+      </p>
+      <br />
+      <p>
+        <i class="bi bi-thermometer-low px-2 text-primary"></i>Min
+        <span class="text-muted">Min Tempareture:</span>
+        <span class="px-3 bg-light"
+          ><br />
+          {{ weather.main.temp_max | number : "1.0-0" }}°c
+        </span>
+      </p>
+    </div>
+
+    <div class="imagecontainer col-md-6 mx-auto" style="position: re">
+      <p
+        class="bg-light p-3 text-gray overlay align-center text-center my-2 h6"
+        style="position: relative"
+      >
+        <span class="px-3">
+          <i class="bi bi-geo-alt-fill px-2"></i
+          ><span class="text-muted">Location:</span>
+          {{ weather.name }}
+        </span>
+        <span class="px-3 bg-light"
+          ><i class="bi bi-thermometer px-2"></i>
+          <span class="text-muted">Tempareture:</span>
+          {{ weather.main.temp | number : "1.0-0" }}°c
+        </span>
+      </p>
+      <img
+        class="card img-fluid"
+        src=" assets/images/cold.jpg"
+        height=""
+        alt="The weather is cooled image illustration"
+        *
+        ngIf="weather.main.temp<14 $$ weatherData.main.temp>5"
+      />
+
+      <img
+        class="w-100 overlay"
+        src="assets/images/beautiful-sky.jpg"
+        height=""
+        alt="The weather is sunny image illustration"
+        *ngIf="weather.main.temp > 15"
+      />
+
+      <img
+        class="w-100"
+        src="assets/images/rainy.gif"
+        alt="The weather is rainy image illustration"
+        *ngIf="weather.main.temp < 5"
+      />
+    </div>
+    <div class="col-md-2 mx-auto">
+      <p class="bg-light p-3">
+        <i class="bi bi-wind px-2"></i><span class="text-muted">Wind:</span>
+        <span
+          ><br />
+          {{ weather.wind.speed }}Km/h
+        </span>
+      </p>
+      <br />
+      <p class="bg-light p-3">
+        <i class="bi bi-moisture px-2"></i
+        ><span class="text-muted">Humidity:</span>
+        <span
+          ><br />
+          {{ weather.main.humidity }}%
+        </span>
+      </p>
+    </div>
+  </div>
+</div> -->
