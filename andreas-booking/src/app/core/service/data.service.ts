@@ -1,21 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Flight } from 'src/app/shared/interfaces/fligth';
 import { environment } from 'src/environments/environment';
 
-interface Flight {
-  schedule: string;
-  airline: string;
-  duration: string;
-  transfer: string;
-  price: string;
-  svg?: string;
-  ariaLabel: string;
-  emissions: string;
-  availableTransport: string;
-  contingencies: string;
-  travelModes: string;
-}
 
 @Injectable({
   providedIn: 'root'

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiBaseUrl: 'http://localhost:3000',
-  openWeather: 'https://open-weather13.p.rapidapi.com/city/portugal',
+  openWeather: 'https://open-weather13.p.rapidapi.com/city/',
 
   XRapidAPIKey: "X-RapidAPI-Key",
   XRapidAPIKeyValue: "456b6015bamsh2b903f77f95b8a2p10c934jsn4e5f6771647b",
